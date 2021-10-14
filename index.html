@@ -91,7 +91,9 @@ function myrefresh() {
    window.location.reload(); 
 } 
 setTimeout('myrefresh()', 60000); 
-window.onload(function(){
+
+
+$(() => {
 	document.getElementById("body").style.height = window.screen.height
 })
 </script>
