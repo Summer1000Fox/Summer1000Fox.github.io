@@ -7,11 +7,16 @@
 
     <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
     <link rel="stylesheet" href="main.css" />
-    <title>罗盘时钟</title>
+    <title>小心二次元时钟</title>
 </head>
-<style></style>
+<style>
+	#body{
+		background-repeat: no-repeat !important;
+		background-size: 100% 100%;
+	}
+</style>
 
-<body id="body" style="background: url('https://acg.toubiec.cn/random.php') no-repeat; background-size: 100% 100%;">
+<body id="body" style="background: url('https://acg.toubiec.cn/random.php') no-repeat; ">
     <div id="sum">
 
         <div id="message">
@@ -87,9 +92,9 @@
 <script src="https://www.jq22.com/jquery/vue.min.js"></script>
 <script src="main.js"></script>
 <script>
-function myrefresh() { 
-   //window.location.reload(); 
-   $("#body").css('background','url("https://acg.toubiec.cn/random.php")');
+function myrefresh() {
+   let url = "https://acg.toubiec.cn/random.php?a="+newDate().getTime();
+   $("#body").css('background','url("${url}")');
 } 
 setTimeout('myrefresh()', 30000); 
 
