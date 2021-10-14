@@ -9,20 +9,9 @@
     <link rel="stylesheet" href="main.css" />
     <title>罗盘时钟</title>
 </head>
-<style>
-body::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('https://acg.toubiec.cn/random.php') 100% 100% no-repeat;
-    animation: animate 5s ease-in-out infinite;
-}
-</style>
+<style></style>
 
-<body style="">
+<body style="background: url('https://acg.toubiec.cn/random.php') 100% 100% no-repeat;">
     <div id="sum">
 
         <div id="message">
@@ -101,6 +90,6 @@ body::after {
 function myrefresh() { 
    window.location.reload(); 
 } 
-setTimeout('myrefresh()', 30000); 
+setTimeout('myrefresh()', 60000); 
 </script>
 </html>
