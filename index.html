@@ -23,6 +23,16 @@
 		background: rgba(0, 0, 0, .8);
 	}
 	
+	#freedom{
+		position: fixed;
+		background: rgba(0, 0, 0, .4);
+		bottom: 0;
+		right: 0;
+		font-size: 50px;
+		padding: 10px 20px;
+		margin: 10px;
+		border-radius: 60px;
+	}
 </style>
 
 <body id="body" style="background: url('https://acg.toubiec.cn/random.php') no-repeat; ">
@@ -91,12 +101,12 @@
             </ul>
         </div>
 		
-		<?php 
-			echo "23333333333";
-			phpinfo();
-		?>
-		
     </div>
+	
+	<div id="freedom">
+		
+	</div>
+	
 </body>
 <script src="https://www.jq22.com/jquery/vue.min.js"></script>
 <script src="main.js"></script>
@@ -108,11 +118,30 @@ function myrefresh() {
    var value = "url("+url+")";
    $("#body").css('background', value);*/
 } 
-setTimeout('myrefresh()', 30000000); 
+setTimeout('myrefresh()', 30000); 
 
 
 $(() => {
 	document.getElementById("body").style.height = window.screen.height+"px"
 })
+
+
+function freedom(){
+	flag = new Date(new Date().toLocaleDateString()).getTime()+18*60*60*1000
+	now = new Date().getTime()
+	diff = flag-now
+	h = Math.floor(diff/1000/60/60%24)
+	m = Math.floor(diff/1000/60%60)
+	s = Math.floor(diff/1000%60)
+	if(s%2==0){
+		str = `${h}&nbsp;:&nbsp;${m}&nbsp;:&nbsp;${s}`
+	}else{
+		str = `${h}&nbsp;&nbsp;&nbsp;${m}&nbsp;&nbsp;&nbsp;${s}`
+	}
+	
+	document.getElementById('freedom').innerHTML = str
+}
+setInterval('freedom()', 1000); 
+
 </script>
 </html>
