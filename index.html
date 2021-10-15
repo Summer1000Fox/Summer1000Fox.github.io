@@ -133,6 +133,9 @@ function freedom(){
 	h = Math.floor(diff/1000/60/60%24)
 	m = Math.floor(diff/1000/60%60)
 	s = Math.floor(diff/1000%60)
+	if( h < 10 ) h = "0" + h 
+	if( m < 10 ) m = "0" + m 
+	if( s < 10 ) s = "0" + s 
 	if(s%2==0){
 		str = `${h}&nbsp;:&nbsp;${m}&nbsp;:&nbsp;${s}`
 	}else{
