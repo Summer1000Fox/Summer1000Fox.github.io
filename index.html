@@ -33,6 +33,11 @@
 		margin: 10px;
 		border-radius: 60px;
 	}
+	.gap{
+		width: 49px;
+		display: inline-block;
+		text-align: center;
+	}
 </style>
 
 <body id="body" style="background: url('https://acg.toubiec.cn/random.php') no-repeat; ">
@@ -130,16 +135,21 @@ function freedom(){
 	flag = new Date(new Date().toLocaleDateString()).getTime()+18*60*60*1000
 	now = new Date().getTime()
 	diff = flag-now
-	h = Math.floor(diff/1000/60/60%24)
-	m = Math.floor(diff/1000/60%60)
-	s = Math.floor(diff/1000%60)
+	h = abs(Math.floor(diff/1000/60/60%24))
+	m = abs(Math.floor(diff/1000/60%60))
+	s = abs(Math.floor(diff/1000%60))
+	
 	if( h < 10 ) h = "0" + h 
 	if( m < 10 ) m = "0" + m 
 	if( s < 10 ) s = "0" + s 
+	
+	const gap1 = `<span class="gap"></span>`;
+	const gap2 = `<span class="gap">:</span>`;
+	
 	if(s%2==0){
-		str = `${h}&nbsp;:&nbsp;${m}&nbsp;:&nbsp;${s}`
+		str = `${h}${gap1}${m}${gap1}${s}`
 	}else{
-		str = `${h}&nbsp;&nbsp;&nbsp;${m}&nbsp;&nbsp;&nbsp;${s}`
+		str = `${h}${gap2}${m}${gap2}${s}`
 	}
 	
 	document.getElementById('freedom').innerHTML = str
