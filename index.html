@@ -135,9 +135,9 @@ function freedom(){
 	flag = new Date(new Date().toLocaleDateString()).getTime()+18*60*60*1000
 	now = new Date().getTime()
 	diff = flag-now
-	h = abs(Math.floor(diff/1000/60/60%24))
-	m = abs(Math.floor(diff/1000/60%60))
-	s = abs(Math.floor(diff/1000%60))
+	h = Math.abs(Math.floor(diff/1000/60/60%24))
+	m = Math.abs(Math.floor(diff/1000/60%60))
+	s = Math.abs(Math.floor(diff/1000%60))
 	
 	if( h < 10 ) h = "0" + h 
 	if( m < 10 ) m = "0" + m 
@@ -153,6 +153,7 @@ function freedom(){
 	}
 	
 	document.getElementById('freedom').innerHTML = str
+	if ( diff < 0 ) document.getElementById('freedom').style.color = "Red"
 }
 setInterval('freedom()', 1000); 
 
