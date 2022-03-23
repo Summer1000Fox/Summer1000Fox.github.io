@@ -123,7 +123,10 @@ function myrefresh() {
    var value = "url("+url+")";
    $("#body").css('background', value);*/
 } 
-setTimeout('myrefresh()', 30000); 
+
+
+//setTimeout('myrefresh()', 30000); 	// 30秒
+setTimeout('myrefresh()', 100*60*10); 	// 10分钟
 
 
 $(() => {
