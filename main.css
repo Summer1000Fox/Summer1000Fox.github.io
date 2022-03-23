@@ -383,9 +383,15 @@
     height: 500px;
     right: -310px;
     font-size: 18px;
-    color: #b4eeb4;
+    /* color: #b4eeb4; */
+    color: #fff;
     font-family: fontOne;
     box-sizing: border-box
+}
+
+#message .msgs{
+    background-color: rgba(0, 0, 0, .8);
+    padding: 3px;
 }
 
 #message ul li {
