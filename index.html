@@ -40,7 +40,7 @@
 	}
 </style>
 
-<body id="body" style="background: url('http://pic.sfox.fun/api/random?token=a8490f0d23b064e98e9e5b6d938d38f8') no-repeat; ">
+<body id="body" style="background: url('http://pic.sfox.fun/api/random?token=a8490f0d23b064e98e9e5b6d938d38f8') no-repeat; backdrop-filter: blur(3px);">
     <div id="sum">
 
         <div id="message">
@@ -124,9 +124,17 @@ function myrefresh() {
    $("#body").css('background', value);*/
 } 
 
+function changeBackground(){
+	var t = Date.parse(new Date())
+	var url = `url('http://pic.sfox.fun/api/random?token=a8490f0d23b064e98e9e5b6d938d38f8&t=${t}') no-repeat`
+	$("body").css("background", url)
+}
+
 
 //setTimeout('myrefresh()', 30000); 	// 30秒
-setTimeout('myrefresh()', 1000*60* 1); 	// 1分钟
+setTimeout('myrefresh()', 1000 * 60 * 60); 	// 60分钟
+
+setTimeout('changeBackground()', 1000 * 60 * 5);
 
 
 $(() => {
